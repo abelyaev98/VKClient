@@ -17,7 +17,7 @@ struct User {
     static var randomOne: User {
         return User(name: Lorem.fullName,
                     avatar: String(Int.random(in: 1...20)),
-                    photos: (1...5).map { _ in String(Int.random(in: 1...20)) }
+                    photos: (1...6).map { _ in String(Int.random(in: 1...20)) }
         )
     }
     

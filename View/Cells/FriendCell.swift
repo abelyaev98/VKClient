@@ -1,5 +1,5 @@
 //
-//  AddCommunityCell.swift
+//  FriendCell.swift
 //  VKClient
 //
 //  Created by Alexander Belyaev on 22.10.2020.
@@ -7,10 +7,11 @@
 
 import UIKit
 
-class AddCommunityCell: UITableViewCell {
+class FriendCell: UITableViewCell {
 
     @IBOutlet weak var avatarView: AvatarView!
-    @IBOutlet weak var communityNameLabel: UILabel!
+    @IBOutlet weak var friendNameLabel: UILabel!
     
 }
+
 

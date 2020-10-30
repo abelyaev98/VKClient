@@ -24,12 +24,15 @@ class AddCommunitiesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommunityCell", for: indexPath) as! AddCommunityCell
         
         let community = communities[indexPath.row]
-        cell.textLabel?.text = community.name
-        cell.imageView?.image = UIImage(named: "Avatars/\(community.avatar)")
-        cell.imageView!.layer.cornerRadius = 21.835
+        
+        cell.communityNameLabel.text = community.name
+        cell.avatarView.imageView.image = UIImage(named: "Avatars/\(community.avatar)")
+        
+//        cell.communityPhotoImage.layer.cornerRadius = cell.communityPhotoImage.frame.width / 2
+        
         
         return cell
     }

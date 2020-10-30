@@ -24,13 +24,15 @@ class CommunitiesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommunityCell", for: indexPath) as! CommunityCell
         
         let community = communities[indexPath.row]
-        cell.textLabel?.text = community.name
-        cell.imageView?.image = UIImage(named: "Avatars/\(community.avatar)")
-
         
+        cell.communityNameLabel.text = community.name
+        cell.avatarView.imageView.image = UIImage(named: "Avatars/\(community.avatar)")
+        
+//        cell.communityPhotoImage.layer.cornerRadius = cell.communityPhotoImage.frame.width / 2
+
         return cell
     }
     
@@ -50,7 +52,7 @@ class CommunitiesViewController: UITableViewController {
         else { return }
         
         let community = controller.communities[indexPath.row]
-        
+    
         communities.append(community)
         tableView.reloadData()
     }
